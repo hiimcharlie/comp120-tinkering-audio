@@ -1,1 +1,2 @@
-# comp-120-tinkering-audio
+# comp-120-tinkering-audio Team 28
+Team members: Adrian Tofan and Charles Handley
