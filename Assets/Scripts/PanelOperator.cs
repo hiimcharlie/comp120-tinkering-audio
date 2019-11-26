@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class PanelOperator : MonoBehaviour
 {
     public GameObject Panel;
-    public GameObject button;
+   // public GameObject button;
 
     public void OpenPanel()
     {
-        if(Panel != null && button!=null)
+        if(Panel != null)
         {
             Panel.SetActive(true);
-            button.SetActive(true);
+          //  button.SetActive(true);
         }
     }
 }
