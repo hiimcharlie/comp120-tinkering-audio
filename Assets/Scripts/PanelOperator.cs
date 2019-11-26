@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PanelOperator : MonoBehaviour
 {
     public GameObject Panel;
+    public GameObject button;
 
     public void OpenPanel()
     {
-        if(Panel != null)
+        if(Panel != null && button!=null)
         {
             Panel.SetActive(true);
+            button.SetActive(true);
         }
     }
 }
