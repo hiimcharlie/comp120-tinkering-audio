@@ -10,14 +10,16 @@ using UnityEditor;
 #endif
 
 
+// The button audio manipulation script.
+
 public class ButtonSound : MonoBehaviour
 {
     private AudioSource audioSource;
     private AudioClip outAudioClip;
-    private int frequency;
+   
     public System.Random randomized = new System.Random();
-    public int freq_click=300;
-    public int freq_hover = 200;
+    public int freq_click=300; // a higher pitch whenever the button is clicked.
+    public int freq_hover = 200; // The frequency of key 'A'
     public float timer = 0f;
     private Button button { get { return GetComponent<Button>(); } }
 
@@ -26,31 +28,23 @@ public class ButtonSound : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         
-        // outAudioClip = CreateToneAudioClip(freq);
-
-        // PlayOutAudio();
+        
 
         audioSource.playOnAwake = false;
         button.onClick.AddListener(() => click_sound());
     }
 
-    /*
-    void Update()
-    {
-
-        //outAudioClip = CreateToneAudioClip(freq);
-        //frequency = -frequency + 10;
-        // PlayOutAudio();
-        if (timer % 0.5f == 0)
-            
-        timer = timer + 0.5f;
-    }
-    */
+    
+    // This method is calling the 'CreateToneAudioClip' method with the specified frequency of the 'A' key note as a parameter.
+    // That sound plays whenever the user's pointer is over the button.
     public void hover_sound()
     {
         outAudioClip = CreateToneAudioClip(freq_hover);
         audioSource.PlayOneShot(outAudioClip);
     }
+
+    // This method is calling the 'CreateToneAudioClip' method with the specified frequency of a higher pitch than the one for hovering over a button.
+    // That sound plays whenever the user's pointer is clicking the button.
     public void click_sound()
     {
         outAudioClip = CreateToneAudioClip(freq_click);
@@ -58,12 +52,13 @@ public class ButtonSound : MonoBehaviour
     }
 
     // Public APIs
+    //Method used to play audio.
     public void PlayOutAudio()
     {
         audioSource.PlayOneShot(outAudioClip);
     }
 
-
+    //Method used to stop audio.
     public void StopAudio()
     {
         audioSource.Stop();
@@ -71,6 +66,7 @@ public class ButtonSound : MonoBehaviour
 
 
     // Private
+    // The sample length was changed for a shorter time for the sound instead of using the sampleRate * sampleDurationSecs formula.
     private AudioClip CreateToneAudioClip(int frequency)
     {
         int sampleDurationSecs = 1;
