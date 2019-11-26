@@ -6,6 +6,7 @@ Contract #4 - Adrian Tofan
     
     Note on contract 4 by Adrian:
     Buttons work on pop-up window, but there is a problem with the pop-up window's sorting order that does that issue.
+    Ignore the script 'Audio Tinker' it is just the reference from the first lesson.
    
 ## License picked by Adrian Tofan
 The reason for choosing the *MIT* license is mainly because of its permissive conditions, the license only requiring preservation
